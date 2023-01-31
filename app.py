@@ -53,7 +53,7 @@ draw_board(board)
 while " " in board:
     if symbol == "X":
         move = int(input("Your turn player 1\nEnter your move (1-25): "))
-        while board[move - 1] != " ":
+        while move < 1 or move > 25 or board[move - 1] != " ":
             move = int(input("Invalid move. Try again (1-25): "))
         update_board(board, move, symbol)
         if check_winner(board, symbol):
@@ -71,3 +71,4 @@ while " " in board:
 
 if " " not in board:
     print("It's a draw!")
+
